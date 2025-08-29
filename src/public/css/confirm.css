@@ -1,0 +1,56 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    max-width: 760px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #fff;
+}
+
+/* 行を“左グレー/右白”の2カラム風に見せる */
+.table tr {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    border-top: 1px solid #eee;
+}
+.table tr:first-child {
+    border-top: none;
+}
+.table th {
+    background: #f7f7f7;
+    padding: 14px 16px;
+    text-align: left;
+    font-weight: 700;
+    color: #555;
+}
+.table td {
+    background: #fff;
+    padding: 14px 16px;
+    color: #333;
+    word-break: break-word;
+}
+
+.actions {
+    margin-top: 28px;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+.btn--ghost {
+    background: #fff;
+    color: #3a2f29;
+    border: 1px solid #3a2f29;
+}
+.btn--primary {
+    background: #3a2f29;
+    color: #fff;
+    border: 1px solid #3a2f29;
+}
+
+@media (max-width: 700px) {
+    .table tr {
+        grid-template-columns: 1fr;
+    }
+}

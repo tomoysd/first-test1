@@ -1,0 +1,95 @@
+.filters {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+@media (min-width: 1000px) {
+    .filters {
+        grid-template-columns: 1.3fr 0.7fr 0.9fr 0.9fr 0.9fr auto auto;
+    }
+}
+.tbl {
+    width: 100%;
+    border-collapse: collapse;
+}
+.tbl th,
+.tbl td {
+    border: 1px solid #ddd;
+    padding: 10px 12px;
+}
+.tbl th {
+    background: #f2eee9;
+    text-align: left;
+}
+.badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: #eee;
+}
+/* modal */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+.modal.is-open {
+    display: flex;
+}
+.modal__card {
+    background: #fff;
+    border-radius: 8px;
+    max-width: 720px;
+    width: 92%;
+    padding: 18px 20px;
+}
+.modal__hd {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.modal__close {
+    border: 0;
+    background: transparent;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* ページネーションの基本スタイル */
+.pagination {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    justify-content: center; /* 真ん中寄せ */
+    margin-top: 20px;
+}
+
+.page-item {
+    margin: 0 4px;
+}
+
+.page-link {
+    display: block;
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #fff;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.page-link:hover {
+    background: #f2f2f2;
+}
+
+.page-item.active .page-link {
+    background: #333;
+    color: #fff;
+    border-color: #333;
+}

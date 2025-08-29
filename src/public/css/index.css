@@ -1,0 +1,123 @@
+.contact-form__content {
+    margin: 0 auto;
+    padding: 30px 15px;
+    max-width: 1230px;
+}
+
+.contact-form__heading {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.form {
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+    max-width: 920px;
+}
+
+.form__group {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    align-items: start;
+    gap: 16px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.form__label {
+    font-weight: 700;
+    text-align: left;
+    line-height: 40px;
+}
+
+.form__label--required {
+    color: red;
+    margin-left: 5px;
+    padding: 4px 6px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.form__error {
+    margin-top: 6px;
+    height: auto;
+    font-size: 12px;
+    color: #ff0000;
+    text-align: left;
+}
+
+.form__input--text input,
+.form__input--textarea textarea {
+    padding: 10px;
+    width: 600px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    appearance: none;
+}
+
+.form__input--text input {
+    height: 40px;
+}
+
+.form__input--textarea textarea {
+    height: 180px;
+}
+
+.form__inputs-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* 「姓」「名」を半分幅に */
+.form__input--half input {
+    width: 290px;
+}
+
+/* 入力は基本フル幅に */
+.form__input--text input,
+.form__input--textarea textarea,
+.form__input--select select {
+    width: 100%;
+}
+
+/* ラジオ並び */
+.form__input--radios {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.form__input--select select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background: #fff;
+    appearance: none;
+}
+
+.form__button {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.form__button-submit {
+    padding: 10px;
+    width: 30%;
+    height: 50px;
+    border: none;
+    border-radius: 3px;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+select {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+}

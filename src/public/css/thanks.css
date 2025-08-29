@@ -1,0 +1,14 @@
+.center, .big{
+    font-size: 20px;
+    margin: 40px 0;
+}
+.wrap {
+    max-width: 720px;
+}
+.btn {
+    background: #3a2f29;
+    color: #fff;
+    border: 1px solid #3a2f29;
+    padding: 12px 28px;
+    border-radius: 4px;
+}
