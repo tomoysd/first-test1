@@ -20,10 +20,17 @@
     margin: 24px 0;
     color: #b88a45;
 }
-.card_card--narrow {
+.card {
+    background: #fff;
     padding: 20px;
+    border: 1px solid #eee;
     border-radius: 8px;
 }
+.card--narrow {
+  max-width: 520px;   /* これが幅制限 */
+  margin: 0 auto;     /* これで中央寄せ */
+}
+
 
 .form_group {
     margin-bottom: 14px;

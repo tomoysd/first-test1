@@ -2,7 +2,7 @@
 
     @section('css')
     <link rel="stylesheet" href="{{ asset('css/common.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/auth.css') }}"> {{-- 任意 --}}
+    <link rel="stylesheet" href="{{ asset('css/auth.css') }}"> 
     @endsection
 
     @section('header_actions')
@@ -14,8 +14,8 @@
     @section('content')
     <h1 class="subttl">Register</h1>
 
-    <div class="card_card--narrow">
-        <form method="POST" action="{{ route('register') }}" class="card" style="max-width:520px;margin:0 auto">
+    <div class="card card--narrow">
+        <form method="POST" action="{{ route('register.custom') }}" novalidate>
             @csrf
 
             {{-- お名前 --}}
@@ -40,10 +40,10 @@
             </div>
 
             {{-- パスワード確認 --}}
-            <div class="form_group">
-            <label class="form_label">パスワード確認 <span class="req">※</span></label>
-            <input type="password" name="password_confirmation" class="form_input" placeholder="同じパスワードを入力">
-            </div>
+        <div class="form_group">
+        <label class="form_label">パスワード確認 <span class="req">※</span></label>
+        <input type="password" name="password_confirmation" class="form_input" placeholder="同じパスワードを入力">
+        </div>
 
             <div class="form_actions" style="text-align:center;margin-top:18px;">
             <button type="submit" class="btn">登録</button>

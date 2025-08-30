@@ -39,15 +39,17 @@
                 性別 <span class="form__label--required">※</span>
             </label>
             <div class="form__input--radios">
+                @php $gender = old('gender', '1'); @endphp
                 <label>
-                <input type="radio" name="gender" value="1" @checked(old('gender','1')=='1')> 男性
+                <input type="radio" name="gender" value="1" {{ $gender == '1' ? 'checked' : '' }}> 男性
                 </label>
                 <label>
-                <input type="radio" name="gender" value="2" @checked(old('gender')=='2')> 女性
+                <input type="radio" name="gender" value="2" {{ $gender == '2' ? 'checked' : '' }}> 女性
                 </label>
                 <label>
-                <input type="radio" name="gender" value="3" @checked(old('gender')=='3')> その他
+                <input type="radio" name="gender" value="3" {{ $gender == '3' ? 'checked' : '' }}> その他
                 </label>
+
                 <div class="form__error">
                     @error('gender'){{ $message }}@enderror
                 </div>

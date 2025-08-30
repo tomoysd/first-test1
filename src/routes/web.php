@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Admin\ContactAdminController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +33,6 @@ Route::get('/admin/contacts/{id}',   [ContactAdminController::class, 'show'])->n
 Route::delete('/admin/contacts/{id}',[ContactAdminController::class, 'destroy'])->name('admin.contacts.destroy');
 Route::get('/admin/export',          [ContactAdminController::class, 'export'])->name('admin.contacts.export');
 });
+
+Route::post('/login/custom',    [LoginController::class, 'store'])->name('login.custom');
+Route::post('/register/custom', [RegisterController::class, 'store'])->name('register.custom');

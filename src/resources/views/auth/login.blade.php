@@ -16,7 +16,7 @@
     <h1 class="subttl">Login</h1>
 
     <div class="card card--narrow" style="max-width:520px;margin:0 auto">
-        <form method="POST" action="{{ route('login') }}">
+        <form method="POST" action="{{ route('login.custom') }}" novalidate>
         @csrf
 
         {{-- メールアドレス --}}
