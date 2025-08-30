@@ -1,14 +1,59 @@
-.center, .big{
-    font-size: 20px;
-    margin: 40px 0;
+/* ページ全体 */
+.thanks {
+    position: relative;
+    min-height: 100vh; /* ヘッダー無くすので全画面に */
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
-.wrap {
-    max-width: 720px;
+
+/* 薄い “Thank you” の背景文字 */
+.thanks__bg {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-weight: 700;
+    font-size: clamp(64px, 15vw, 200px);
+    color: #000;
+    opacity: 0.05; /* さらに薄め */
+    user-select: none;
+    pointer-events: none;
+    letter-spacing: 2px;
+    white-space: nowrap;
 }
-.btn {
-    background: #3a2f29;
+
+/* 中央パネル */
+.thanks__panel {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 32px 40px;
+}
+
+/* メッセージ */
+.thanks__msg {
+    margin: 0 0 20px;
+    font-size: 25px;
+    color: #333;
+}
+
+/* HOMEボタン */
+.btn--home {
+    display: inline-block;
+    padding: 10px 22px;
+    
     color: #fff;
-    border: 1px solid #3a2f29;
-    padding: 12px 28px;
+    border: 2px solid #4b3b2a;
     border-radius: 4px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.btn--home:hover {
+    background: #4b3b2a;
+    color: #fff;
+    transition: 0.2s;
 }

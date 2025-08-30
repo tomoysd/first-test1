@@ -5,8 +5,11 @@
 }
 
 .contact-form__heading {
-    margin-bottom: 40px;
+    font-family: "Georgia", "Times New Roman", serif; /* セリフ体 */
+    font-size: 30px;
     text-align: center;
+    margin: 24px 0;
+    color: #b88a45;
 }
 
 .form {

@@ -1,3 +1,24 @@
+.card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 14px;
+}
+.btn {
+    display: inline-block;
+    padding: 8px 12px;
+    border: 1px solid #333;
+    background: #333;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+}
+.btn.sub {
+    background: #666;
+    border-color: #666;
+}
+
+/* ===== フィルタフォーム ===== */
 .filters {
     display: grid;
     gap: 12px;
@@ -8,6 +29,8 @@
         grid-template-columns: 1.3fr 0.7fr 0.9fr 0.9fr 0.9fr auto auto;
     }
 }
+
+/* ===== テーブル ===== */
 .tbl {
     width: 100%;
     border-collapse: collapse;
@@ -16,30 +39,34 @@
 .tbl td {
     border: 1px solid #ddd;
     padding: 10px 12px;
+    text-align: left;
 }
 .tbl th {
     background: #f2eee9;
-    text-align: left;
 }
+
+/* ラベル */
 .badge {
     display: inline-block;
     padding: 2px 8px;
     border-radius: 999px;
     background: #eee;
 }
-/* modal */
+
+/* ===== モーダル ===== */
 .modal {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5);
     display: none;
     align-items: center;
     justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
     z-index: 999;
 }
 .modal.is-open {
     display: flex;
 }
+
 .modal__card {
     background: #fff;
     border-radius: 8px;
@@ -60,36 +87,76 @@
     cursor: pointer;
 }
 
-/* ページネーションの基本スタイル */
-.pagination {
+/* ===== ページネーション（上は右寄せ／下は中央寄せ） ===== */
+.pager {
+    margin: 10px 0;
+}
+.pager--top {
     display: flex;
+    justify-content: flex-end;
+}
+.pager--bottom {
+    text-align: center;
+}
+
+.pagination {
+    display: inline-flex;
     list-style: none;
-    padding-left: 0;
-    justify-content: center; /* 真ん中寄せ */
-    margin-top: 20px;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
 }
-
 .page-item {
-    margin: 0 4px;
+    margin: 0;
 }
-
 .page-link {
-    display: block;
-    padding: 6px 12px;
+    display: inline-block;
+    padding: 6px 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
     background: #fff;
     color: #333;
     text-decoration: none;
-    font-size: 14px;
+    line-height: 1;
 }
-
 .page-link:hover {
     background: #f2f2f2;
 }
-
 .page-item.active .page-link {
-    background: #333;
+    background: #2563eb;
     color: #fff;
-    border-color: #333;
+    border-color: #2563eb;
+}
+.page-item.disabled .page-link {
+    color: #aaa;
+    background: #f5f5f5;
+    pointer-events: none;
+}
+
+/* ←→ の巨大化防止（疑似要素を使わない） */
+.page-link::before,
+.page-link::after {
+    content: none;
+}
+
+.btn--danger {
+    background-color: #e3342f; /* 赤 */
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn--danger:hover {
+    background-color: #cc1f1a; /* 濃い赤 */
+}
+
+.hd-actions .btn {
+    background: #eeeeee; /* 背景：灰色 */
+    color: #d8c3a5; /* 文字：薄い茶系 */
+    border: 1px solid #dddddd; /* うっすら枠 */
+}
+.hd-actions .btn:hover {
+    opacity: 0.9;
 }

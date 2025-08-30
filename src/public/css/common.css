@@ -2,19 +2,6 @@
     background: #fff;
 }
 
-.header__inner {
-    margin: 0 auto;
-    padding: 20px 15px;
-    max-width: 1230px;
-}
-
-.header__logo {
-    color: burlywood;
-    text-align: center;
-    font-weight: bold;
-    font-size: 36px;
-}
-
 .site-logo {
     color: burlywood;
     text-align: center;
@@ -213,4 +200,36 @@ body {
 .confirm-table td {
     background: #faf9f8;
     white-space: pre-wrap;
+}
+/* === 全ページの土台 === */
+body {
+    background: #e8dccf; /* 明るい茶色（ベージュ） */
+}
+
+/* ヘッダーの横並び器：ロゴを中央、アクションは右端 */
+.header__bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* 中央寄せ */
+    height: 64px;
+}
+
+/* ロゴの見た目（1枚目の“FashionablyLate”っぽく） */
+.header__logo {
+    font-family: "Georgia", "Times New Roman", serif; /* セリフ体にして雰囲気近づける */
+    font-size: 28px;
+    font-weight: 700;
+    color: #b88a45; /* 黄土色寄りのブラウン */
+    letter-spacing: 0.5px;
+}
+
+/* 右上のアクション（login）を絶対配置で右に固定 */
+.hd-actions {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 8px;
 }

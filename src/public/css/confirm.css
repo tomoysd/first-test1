@@ -1,56 +1,79 @@
+/* 見出し：ヘッダーと同じ系統のフォント＆色 */
+.confirm-title {
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    color: #b88a45; /* ヘッダーのロゴ色と合わせる */
+    margin: 24px 0 20px;
+    letter-spacing: 0.3px;
+}
+
+/* テーブルの簡易スタイル（必要に応じて調整） */
 .table {
     width: 100%;
-    border-collapse: collapse;
+    max-width: 720px;
     margin: 0 auto;
-    max-width: 760px;
-    border: 1px solid #eee;
-    border-radius: 6px;
-    overflow: hidden;
     background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
 }
-
-/* 行を“左グレー/右白”の2カラム風に見せる */
-.table tr {
-    display: grid;
-    grid-template-columns: 220px 1fr;
-    border-top: 1px solid #eee;
+.table th,
+.table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: top;
+    line-height: 1.6;
 }
-.table tr:first-child {
-    border-top: none;
+.table tr:last-child th,
+.table tr:last-child td {
+    border-bottom: none;
 }
 .table th {
-    background: #f7f7f7;
-    padding: 14px 16px;
-    text-align: left;
-    font-weight: 700;
+    width: 32%;
     color: #555;
-}
-.table td {
-    background: #fff;
-    padding: 14px 16px;
-    color: #333;
-    word-break: break-word;
+    background: #faf7f1; /* ほんのり */
+    font-weight: 600;
 }
 
-.actions {
-    margin-top: 28px;
+/* ボタンの並び */
+.confirm-actions {
     display: flex;
     justify-content: center;
-    gap: 16px;
-}
-.btn--ghost {
-    background: #fff;
-    color: #3a2f29;
-    border: 1px solid #3a2f29;
-}
-.btn--primary {
-    background: #3a2f29;
-    color: #fff;
-    border: 1px solid #3a2f29;
+    align-items: center;
+    gap: 16px; /* ボタン間隔 */
+    margin-top: 60px; /* ここで“下に持っていく” */
 }
 
-@media (max-width: 700px) {
-    .table tr {
-        grid-template-columns: 1fr;
-    }
+/* 2つの form を横並びにするための保険 */
+.confirm-actions form {
+    display: inline-block;
 }
+
+/* 既存の .btn をベースに。送信=濃茶、修正=グレー×文字濃いめ */
+.btn {
+    display: inline-block;
+    padding: 10px 18px;
+    border: 0;
+    background: #4b3b2a; /* 送信ボタン：濃茶 */
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* 修正ボタン用（セカンダリ） */
+.btn--secondary {
+    background: #eeeeee; /* グレー背景 */
+    color: #333; /* 文字は濃いめ */
+    border: 1px solid #dddddd;
+}
+.btn--secondary:hover {
+    opacity: 0.9;
+}
+
+/* 小さめにしたい場合（任意） */
+/*.btn--sm { font-size: 14px; padding: 6px 12px; }*/
