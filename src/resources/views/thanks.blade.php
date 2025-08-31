@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('no_header') {{-- これでヘッダー消える --}} @endsection
+@section('no_header')  @endsection  {{-- これでヘッダー消える --}}
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/thanks.css') }}">

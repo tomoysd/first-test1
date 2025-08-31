@@ -33,14 +33,6 @@
 
   {{-- ボタンの横並びブロック --}}
   <div class="confirm-actions">
-    {{-- 修正（入力に戻る） --}}
-    <form method="GET" action="{{ url('/') }}">
-      @foreach($inputs as $name => $value)
-        <input type="hidden" name="{{ $name }}" value="{{ $value }}">
-      @endforeach
-      <button class="btn btn--secondary" type="submit">修正</button>
-    </form>
-
     {{-- 送信（保存/サンクスへ） --}}
     <form method="POST" action="{{ url('/send') }}">
       @csrf
@@ -49,5 +41,16 @@
       @endforeach
       <button class="btn" type="submit">送信</button>
     </form>
+
+
+    {{-- 修正（入力に戻る） --}}
+    <form method="GET" action="{{ url('/') }}">
+      @foreach($inputs as $name => $value)
+        <input type="hidden" name="{{ $name }}" value="{{ $value }}">
+      @endforeach
+      <button class="btn-link" type="submit">修正</button>
+    </form>
+
+    
   </div>
 @endsection

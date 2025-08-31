@@ -71,37 +71,44 @@
 
         {{-- 電話番号 --}}
         <div class="form__group">
-            <label class="form__label">
-                電話番号 <span class="form__label--required">※</span>
-            </label>
-            <div class="form__input--text">
-                <input type="tel" name="tel" value="{{ old('tel') }}" placeholder="09012345678">
-                <div class="form__error">
-                    @error('tel'){{ $message }}@enderror
-                </div>
-            </div>
+            <label class="form__label">電話番号 <span class="form__label--required">※</span></label>
+                <div class="form__input--tel">
+                    <input type="tel" name="tel1" value="{{ old('tel1') }}" placeholder="090"
+                            class="tel tel-3" inputmode="numeric" pattern="\d*" maxlength="4">
+                    <span class="hyphen">-</span>
+
+                    <input type="tel" name="tel2" value="{{ old('tel2') }}" placeholder="1234"
+                            class="tel tel-4" inputmode="numeric" pattern="\d*" maxlength="4">
+                    <span class="hyphen">-</span>
+
+                    <input type="tel" name="tel3" value="{{ old('tel3') }}" placeholder="5678"
+                            class="tel tel-4" inputmode="numeric" pattern="\d*" maxlength="4">
+                
+                    @if ($errors->has('tel1') || $errors->has('tel2') || $errors->has('tel3'))
+                        <div class="form__error">電話番号を入力してください。</div>
+                    @endif
+                    </div>
         </div>
 
-        {{-- 住所・建物名（横並び） --}}
+
+        {{-- 住所 --}}
         <div class="form__group">
-            <label class="form__label">
-                住所 <span class="form__label--required">※</span>
-            </label>
-            <div class="form__inputs-row">
-                <div class="form__input--text">
-                    <input type="text" name="address" value="{{ old('address') }}" placeholder="例）東京都渋谷区○○">
-                    <div class="form__error">
-                        @error('address'){{ $message }}@enderror
-                    </div>
-                </div>
-                <div class="form__input--text">
-                    <input type="text" name="building" value="{{ old('building') }}" placeholder="例）千代田マンション101">
-                    <div class="form__error">
-                        @error('building'){{ $message }}@enderror
-                    </div>
-                </div>
-            </div>
+        <label class="form__label">住所 <span class="form__label--required">※</span></label>
+        <div class="form__input--text">
+            <input type="text" name="address" value="{{ old('address') }}" placeholder="例）東京都渋谷区〇〇">
+            <div class="form__error">@error('address'){{ $message }}@enderror</div>
         </div>
+        </div>
+
+        {{-- 建物名 --}}
+        <div class="form__group">
+        <label class="form__label">建物名</label>
+        <div class="form__input--text">
+            <input type="text" name="building" value="{{ old('building') }}" placeholder="例）千代田マンション101">
+            <div class="form__error">@error('building'){{ $message }}@enderror</div>
+        </div>
+        </div>
+
 
         {{-- お問い合わせの種類（デフォルトで「選択してください」） --}}
         <div class="form__group">

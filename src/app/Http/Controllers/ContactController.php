@@ -17,10 +17,8 @@ class ContactController extends Controller
 
     public function confirm(ContactRequest $request)
     {
-        $inputs = $request->all();
-
-        $map = Category::pluck('content','id')->toArray();
-        $inputs['category_label'] = $map[$inputs['category_id']] ?? '';
+        $inputs = $request->validated();
+        $inputs['tel'] = implode('-', [$request->tel1, $request->tel2, $request->tel3]);
         return view('confirm', compact('inputs'));
     }
 
@@ -33,8 +31,15 @@ class ContactController extends Controller
 
     public function send(ContactRequest $request)
     {
+        $request->validate([
+        'tel1' => ['required', 'digits_between:2,4', 'regex:/^[0-9]+$/'],
+        'tel2' => ['required', 'digits_between:3,4', 'regex:/^[0-9]+$/'],
+        'tel3' => ['required', 'digits:4', 'regex:/^[0-9]+$/'],
+    ]);
         // バリデーション済みデータを取得
         $data = $request->validated();
+
+        $data['tel'] = implode('-', [$request->tel1, $request->tel2, $request->tel3]);
 
         // DB保存（Contactモデルに fillable を用意しておく）
         Contact::create($data);

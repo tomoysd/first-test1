@@ -15,10 +15,10 @@
     inset: 0;
     display: grid;
     place-items: center;
-    font-family: "Georgia", "Times New Roman", serif;
-    font-weight: 700;
-    font-size: clamp(64px, 15vw, 200px);
-    color: #000;
+    font-family: "Inika", "Times New Roman", serif;
+    font-weight: 400;
+    font-size: 280px;
+    color: #8b7969;
     opacity: 0.05; /* さらに薄め */
     user-select: none;
     pointer-events: none;
@@ -37,23 +37,31 @@
 /* メッセージ */
 .thanks__msg {
     margin: 0 0 20px;
-    font-size: 25px;
-    color: #333;
+    font-size: 30px;
+    font-family: "Inika";
+    font-weight: 700;
+    color: #8b7969;
 }
 
 /* HOMEボタン */
 .btn--home {
     display: inline-block;
     padding: 10px 22px;
-    
     color: #fff;
-    border: 2px solid #4b3b2a;
-    border-radius: 4px;
-    font-weight: bold;
+    background: #82756a;
+    border: 2px solid #82756a;
+    border-radius: 0px;
+    font-family: "Inika";
+    font-size: 20px;
+    font-weight: 400;
     text-decoration: none;
 }
 .btn--home:hover {
-    background: #4b3b2a;
+    background: #666;
     color: #fff;
     transition: 0.2s;
+}
+
+.header {
+    display: none !important;
 }

@@ -14,38 +14,65 @@
     gap: 8px;
 }
 .subttl {
-    font-family: "Georgia", "Times New Roman", serif; /* セリフ体 */
-    font-size: 30px;
+    font-family: "Inika", "Times New Roman", serif; /* セリフ体 */
+    font-size: 35px;
+    font-weight: 400;
     text-align: center;
-    margin: 24px 0;
-    color: #b88a45;
+    margin: 0 0 16px;
+    color: #8b7969;
 }
-.card {
-    background: #fff;
-    padding: 20px;
-    border: 1px solid #eee;
-    border-radius: 8px;
-}
-.card--narrow {
-  max-width: 520px;   /* これが幅制限 */
-  margin: 0 auto;     /* これで中央寄せ */
+.auth {
+    background: #f1ece7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* 縦に並べる */
+    align-items: center; /* 横は中央 */
+    justify-content: flex-start; /* 上寄せ */
+    padding-top: 60px;
 }
 
+.card form{
+    background: #fff;
+    border-radius: 4px;
+    padding: 40px 72px;
+    width: 100%;
+    max-width: 736px;
+    ; /* blade側の style に合わせた */
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.card--narrow {
+    margin: 0 auto; /* これで中央寄せ */
+}
 
 .form_group {
-    margin-bottom: 14px;
+    margin-bottom: 24px;
+    width: 445px;
+    align-items: center;
 }
 .form_label {
+    color: #8b7969;
+    font-family: "Inika";
+    font-size: 25px;
+    font-weight: 400;
     display: block;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 .form_input {
+    display: block;
+    color: #beb1a6;
     width: 100%;
-    height: 42px;
-    padding: 0 10px;
-    background: #efefef; /* 四角の中の色を灰色に */
+    max-width: 445px;
+    margin: 0 auto;
+    height: 48px;
+    padding: 10px 12px;
+    background: #f4f4f4; /* 四角の中の色を灰色に */
     border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 0;
+    outline: none;
+    font-size: 14px;
+    box-sizing: border-box;
 }
 .form_error {
     color: #d33;
@@ -56,12 +83,14 @@
     color: #d33;
 }
 .btn {
+    font-size: 20px;
     display: inline-block;
     padding: 10px 18px;
+    margin: 32px;
     border: 0;
-    background: #4b3b2a;
+    background: #82756a;
     color: #fff;
-    border-radius: 4px;
+    border-radius: 0;
     cursor: pointer;
 }
 .btn--ghost {
@@ -81,4 +110,16 @@
 }
 .hd-actions .btn:hover {
     opacity: 0.9;
+}
+
+body {
+    background: #f1ece7;
+    padding: 0;
+    margin: 0;
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 24px 16px;
+    }
 }

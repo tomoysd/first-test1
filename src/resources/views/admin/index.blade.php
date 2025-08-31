@@ -16,30 +16,30 @@
 
 
 @section('content')
+<h1 class="subttl">Admin</h1>
     @if(session('status'))
-    <div class="card" style="margin-bottom:12px;color:#2563eb">{{ session('status') }}</div>
+    <div class="card">{{ session('status') }}</div>
     @endif
 
     <div class="card">
     <form method="GET" class="filters">
-        <input type="text" name="keyword" value="{{ $filters['keyword'] }}" placeholder="名前・メール・電話・住所・内容で検索">
+        <input type="text" name="keyword" value="{{ $filters['keyword'] }}" placeholder="名前やメールアドレスを入力してください">
         <select name="gender">
-        <option value="">性別(すべて)</option>
+        <option value="">性別</option>
         <option value="1" @selected($filters['gender']=='1')>男性</option>
         <option value="2" @selected($filters['gender']=='2')>女性</option>
         <option value="3" @selected($filters['gender']=='3')>その他</option>
         </select>
         <select name="category_id">
-        <option value="">種類(すべて)</option>
+        <option value="">お問い合わせの種類</option>
         @foreach($categories as $id => $name)
             <option value="{{ $id }}" @selected($filters['category_id']==$id)>{{ $name }}</option>
         @endforeach
         </select>
         <input type="date" name="date_from" value="{{ $filters['date_from'] }}">
-        <input type="date" name="date_to"   value="{{ $filters['date_to'] }}">
         <button class="btn" type="submit">検索</button>
         <a class="btn sub" href="{{ route('admin.contacts.index') }}">リセット</a>
-        <a class="btn" href="{{ route('admin.contacts.export', request()->query()) }}">エクスポート</a>
+        <a class="btn exp" href="{{ route('admin.contacts.export', request()->query()) }}">エクスポート</a>
     </form>
 
     {{-- 右上ページネーション --}}

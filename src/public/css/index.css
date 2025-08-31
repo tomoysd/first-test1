@@ -1,15 +1,17 @@
 .contact-form__content {
     margin: 0 auto;
-    padding: 30px 15px;
-    max-width: 1230px;
+    padding: 24px;
+    max-width: 972px;
+    background: #fff;
 }
 
 .contact-form__heading {
-    font-family: "Georgia", "Times New Roman", serif; /* セリフ体 */
-    font-size: 30px;
+    font-family: "Inika", "Times New Roman", serif; /* セリフ体 */
+    font-size: 35px;
+    font-weight: 400;
     text-align: center;
     margin: 24px 0;
-    color: #b88a45;
+    color: #8b7969;
 }
 
 .form {
@@ -29,17 +31,22 @@
 }
 
 .form__label {
-    font-weight: 700;
+    font-family: "Inika";
+    color: #8b7969;
+    font-weight: 400;
+    font-size: 20px;
     text-align: left;
     line-height: 40px;
+    white-space: nowrap;
 }
 
 .form__label--required {
-    color: red;
+    color: #ff9494;
     margin-left: 5px;
     padding: 4px 6px;
     border-radius: 3px;
-    font-weight: bold;
+    font-size: 20px;
+    font-weight: 400;
 }
 
 .form__error {
@@ -51,31 +58,77 @@
 }
 
 .form__input--text input,
-.form__input--textarea textarea {
+.form__input--textarea textarea,
+.form__input--tel input {
     padding: 10px;
-    width: 600px;
-    border: 1px solid #ddd;
+    height: 38px;
+    border: 1px solid #f4f4f4;
     border-radius: 3px;
     appearance: none;
+    background: #f4f4f4;
+    font-family: "Inika";
+    font-weight: 400;
+    font-size: 14px;
+    color: #beb1a6;
+    box-sizing: border-box;
 }
 
 .form__input--text input {
     height: 40px;
+    font-family: "Inika";
+    font-weight: 400;
+    font-size: 14px;
+    color: #beb1a6;
 }
 
 .form__input--textarea textarea {
-    height: 180px;
+    min-height: 140px;
+    padding: 12px; /* ← 中の文字に余白 */
+    resize: vertical;
+}
+
+/* 電話番号 3分割の横並びとサイズ */
+.form__input--tel {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* 入力とハイフンの間隔 */
+}
+
+.form__input--tel .tel {
+    height: 40px;
+    padding: 0 12px;
+    width: 100%;
+    background: #f4f4f4;
+    border: 1px solid #f4f4f4;
+    border-radius: 3px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.form__input--tel .tel-3 {
+    max-width: 80px;
+} /* 090 */
+.form__input--tel .tel-4 {
+    max-width: 100px;
+} /* 1234 / 5678 */
+
+.form__input--tel .hyphen {
+    line-height: 38px; /* 入力の高さに合わせて中央寄せ */
 }
 
 .form__inputs-row {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 24px;
+    align-items: center;
+    margin-bottom: 16px;
+    gap: 16px;
 }
 
-/* 「姓」「名」を半分幅に */
-.form__input--half input {
-    width: 290px;
+.form__inputs-row .form__input--text,
+.form__inputs-row .form__input--text input {
+    width: 100%; /* 余計な固定幅を打ち消す */
+    min-width: 0; /* はみ出し防止 */
 }
 
 /* 入力は基本フル幅に */
@@ -87,17 +140,28 @@
 
 /* ラジオ並び */
 .form__input--radios {
+    color: #8b7969;
+    font-family: "Inika";
+    font-weight: 400;
+    font-size: 18px;
     display: flex;
     gap: 24px;
     align-items: center;
 }
 
 .form__input--select select {
-    padding: 10px;
-    border: 1px solid #ddd;
+    padding-right: 44px;
+    border: 1px solid #f4f4f4;
     border-radius: 3px;
-    background: #fff;
+    background: #f4f4f4;
     appearance: none;
+    color: #beb1a6;
+    font-size: 16px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='20' viewBox='0 0 30 20'><polygon points='0,0 30,0 15,20' fill='%23BEB1A6'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 10px center; /* 矢印の位置 */
+    background-size: 30px 20px; /* 矢印の大きさ */
+    max-width: 420px;
 }
 
 .form__button {
@@ -106,21 +170,39 @@
 }
 
 .form__button-submit {
-    padding: 10px;
-    width: 30%;
-    height: 50px;
+    padding: 10px 40px 10px 40px;
+    margin: 10px;
+    width: 16%;
+    height: 46px;
     border: none;
     border-radius: 3px;
-    background: #000;
+    background: #82756a;
     color: #fff;
+    font-family: "Inika";
+    font-size: 20px;
+    font-weight: 400;
     cursor: pointer;
 }
 
 select {
     width: 100%;
+    box-sizing: border-box;
+    height: 40px;
     padding: 6px 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
     background-color: #fff;
     cursor: pointer;
+}
+
+.form__input--text input::placeholder,
+.form__input--tel input::placeholder,
+.form__input--textarea textarea::placeholder,
+.form__input--select select::placeholder {
+    color: #beb1a6;
+    opacity: 1; /* Safari 対策 */
+}
+
+body{
+    background: #fff;
 }

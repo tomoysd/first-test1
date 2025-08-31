@@ -1,28 +1,68 @@
+.subttl,
+.card,
+.pager,
+.tbl {
+    width: min(980px, 100%); /* 全体幅を絞る */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.subttl {
+    font-family: "Inika", "Times New Roman", serif; /* セリフ体 */
+    font-size: 35px;
+    font-weight: 400;
+    width: min(980px, 100%);
+    text-align: center;
+    margin: 0 0 16px;
+    color: #8b7969;
+}
+
 .card {
     background: #fff;
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    padding: 14px;
+    border-radius: 0;
+    padding: 16px 20px;
+    box-sizing: border-box;
 }
+.card,
+.tbl {
+    border: none;
+    box-shadow: none;
+}
+
 .btn {
     display: inline-block;
-    padding: 8px 12px;
-    border: 1px solid #333;
-    background: #333;
+    height: 40px;
+    padding: 0 16px;
+    border: none;
+    cursor: pointer;
+    background: #8b7969;
     color: #fff;
     border-radius: 4px;
     text-decoration: none;
 }
+.btn.exp {
+    color: #8b7969;
+    background: #e1dbd699;
+    width: px;
+    margin: 12px 0 8px;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px; /* フィルターの高さと合わせる */
+    line-height: normal;
+}
 .btn.sub {
-    background: #666;
-    border-color: #666;
+    color: #fff;
+    background: #d9c6b5;
 }
 
 /* ===== フィルタフォーム ===== */
 .filters {
     display: grid;
+    grid-template-columns: 1.6fr 0.9fr 1.1fr 0.9fr 0.9fr auto auto; /* キーワード/性別/種類/日付/日付/検索/リセット */
     gap: 12px;
-    margin-bottom: 18px;
+    align-items: end;
 }
 @media (min-width: 1000px) {
     .filters {
@@ -30,27 +70,88 @@
     }
 }
 
+.filters input[type="text"],
+.filters input[type="date"],
+.filters select {
+    color: #887969;
+    height: 40px;
+    padding: 8px 10px;
+    background: #f4f4f4;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.filters input[type="text"]::placeholder {
+    color: #887969;
+    opacity: 0.9;
+}
+.filters .btn[type="submit"] {
+    color: #fff;
+    background: #5b4b3f;
+    width: 72px;
+} /* 検索 */
+.filters .btn.sub {
+    width: 64px;
+    text-align: center;
+} /* リセット */
+
 /* ===== テーブル ===== */
 .tbl {
-    width: 100%;
-    border-collapse: collapse;
+    border: none; /* 外枠の縁線を消す */
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden; /* 角丸を効かせるため */
+    border-collapse: separate;
+    border-spacing: 0;
 }
 .tbl th,
 .tbl td {
-    border: 1px solid #ddd;
+    font-family: "Inika";
+    font-size: 20px;
+    font-weight: 400;
+    color: #8b7969;
+    border-bottom: 1px solid #ddd;
     padding: 10px 12px;
     text-align: left;
+    border-right: none;
+}
+.tbl td {
+    padding: 12px;
+    border: none; /* 外枠の線は付けない */
 }
 .tbl th {
-    background: #f2eee9;
+    font-weight: 700;
+    color: #fff;
+    background: #8b7969;
+    padding: 12px;
+    border: none;
+}
+.tbl thead tr {
+    border-bottom: 1px solid #e5e5e5;
+}
+.tbl thead th {
+    border: none;
+} /* ヘッダー個々の枠線はゼロ */
+.tbl tbody tr {
+    border-bottom: 1px solid #e5e5e5;
+}
+.tbl tbody tr:last-child {
+    border-bottom: none;
+}
+.tbl .btn.sub {
+    background: #fff;
+    color: #5b4b3f;
+    border: 1px solid #5b4b3f;
+}
+.tbl .btn.sub:hover {
+    background: #5b4b3f;
+    color: #fff;
 }
 
 /* ラベル */
 .badge {
     display: inline-block;
     padding: 2px 8px;
-    border-radius: 999px;
-    background: #eee;
 }
 
 /* ===== モーダル ===== */
@@ -159,4 +260,18 @@
 }
 .hd-actions .btn:hover {
     opacity: 0.9;
+}
+body {
+    background: #fff;
+}
+.card,
+.filters input[type="text"],
+.filters input[type="date"],
+.filters select,
+.btn,
+.pager .page-link,
+.tbl,
+.tbl thead th,
+.tbl td {
+    border-radius: 0;
 }

@@ -1,12 +1,13 @@
 /* 見出し：ヘッダーと同じ系統のフォント＆色 */
 .confirm-title {
-    font-family: "Georgia", "Times New Roman", serif;
-    font-size: 24px;
-    font-weight: 700;
+    font-family: "Inika", "Times New Roman", serif;
+    font-size: 35px;
+    font-weight: 400;
     text-align: center;
-    color: #b88a45; /* ヘッダーのロゴ色と合わせる */
+    color: #8b7969; /* ヘッダーのロゴ色と合わせる */
     margin: 24px 0 20px;
     letter-spacing: 0.3px;
+    background: #fff;
 }
 
 /* テーブルの簡易スタイル（必要に応じて調整） */
@@ -15,8 +16,7 @@
     max-width: 720px;
     margin: 0 auto;
     background: #fff;
-    border: 1px solid #eee;
-    border-radius: 8px;
+    border: 1px solid #E0DFDE;
     overflow: hidden;
 }
 .table th,
@@ -31,10 +31,21 @@
     border-bottom: none;
 }
 .table th {
+    font-family: "Inika";
+    font-size: 20px;
     width: 32%;
-    color: #555;
-    background: #faf7f1; /* ほんのり */
-    font-weight: 600;
+    height: 26px;
+    color: #fff;
+    background: #baa899; /* ほんのり */
+    font-weight: 400;
+    text-align: left;
+    padding-left: 30px;
+}
+.table td {
+    font-family: "Inika";
+    font-size: 20px;
+    font-weight: 400;
+    color: #8b7969;
 }
 
 /* ボタンの並び */
@@ -53,27 +64,44 @@
 
 /* 既存の .btn をベースに。送信=濃茶、修正=グレー×文字濃いめ */
 .btn {
+    font-family: "Inika";
+    font-size: 20px;
+    font-weight: 400;
     display: inline-block;
-    padding: 10px 18px;
+    min-width: 120px;
+    text-align: center; 
+    padding: 10px 40px;
     border: 0;
-    background: #4b3b2a; /* 送信ボタン：濃茶 */
+    background: #82756a; /* 送信ボタン：濃茶 */
     color: #fff;
-    border-radius: 4px;
     cursor: pointer;
+    transition: opacity 0.2s;
+    border-radius: 0; 
 }
 .btn:hover {
     opacity: 0.9;
 }
 
 /* 修正ボタン用（セカンダリ） */
-.btn--secondary {
-    background: #eeeeee; /* グレー背景 */
-    color: #333; /* 文字は濃いめ */
-    border: 1px solid #dddddd;
+.btn-link {
+    font-family: "Inika";
+    background: none; /* 背景色なし */
+    border: none; /* 枠なし */
+    color: #8B7969; /* テキスト色（送信ボタンの色に合わせる） */
+    font-size: 20px;
+    font-weight: 400;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-bottom: 2px solid #4b3b2a; /* 下に棒線を付ける */
+    transition: opacity 0.2s;
 }
-.btn--secondary:hover {
-    opacity: 0.9;
+
+.btn-link:hover {
+    opacity: 0.7; /* ホバー時に薄くする */
 }
 
 /* 小さめにしたい場合（任意） */
 /*.btn--sm { font-size: 14px; padding: 6px 12px; }*/
+body {
+    background: #fff;
+}
