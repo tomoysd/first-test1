@@ -17,9 +17,7 @@
 
 @section('content')
 <h1 class="subttl">Admin</h1>
-    @if(session('status'))
-    <div class="card">{{ session('status') }}</div>
-    @endif
+
 
     <div class="card">
     <form method="GET" class="filters">
@@ -39,8 +37,10 @@
         <input type="date" name="date_from" value="{{ $filters['date_from'] }}">
         <button class="btn" type="submit">検索</button>
         <a class="btn sub" href="{{ route('admin.contacts.index') }}">リセット</a>
-        <a class="btn exp" href="{{ route('admin.contacts.export', request()->query()) }}">エクスポート</a>
     </form>
+    <div class="filters-row2">
+        <a class="btn exp" href="{{ route('admin.contacts.export', request()->query()) }}">エクスポート</a>
+    </div>
 
     {{-- 右上ページネーション --}}
         <div class="pager pager--top">
@@ -66,10 +66,9 @@
     <table class="tbl">
         <thead>
         <tr>
-            <th>作成日</th>
             <th>お名前</th>
             <th>性別</th>
-            <th>メール</th>
+            <th>メールアドレス</th>
             <th>お問い合わせの種類</th>
             <th>操作</th>
         </tr>
@@ -77,7 +76,6 @@
         <tbody>
         @forelse($contacts as $c)
         <tr>
-            <td>{{ $c->created_at->format('Y-m-d') }}</td>
             <td>{{ $c->last_name }} {{ $c->first_name }}</td>
             <td>{{ [1=>'男性',2=>'女性',3=>'その他'][$c->gender] ?? '' }}</td>
             <td>{{ $c->email }}</td>
@@ -126,7 +124,7 @@
         const deleteUrl = `/admin/contacts/${id}`;
 
         modalBody.innerHTML = `
-            <table class="tbl" style="width:100%">
+            <table class="tbl">
             <tr><th>お名前</th><td>${d.name}</td></tr>
             <tr><th>性別</th><td>${d.gender}</td></tr>
             <tr><th>メールアドレス</th><td>${d.email}</td></tr>
@@ -135,7 +133,6 @@
             <tr><th>建物名</th><td>${d.building ?? ''}</td></tr>
             <tr><th>お問い合わせの種類</th><td>${d.category}</td></tr>
             <tr><th>お問い合わせ内容</th><td style="white-space:pre-wrap">${d.detail}</td></tr>
-            <tr><th>作成日</th><td>${d.created}</td></tr>
             </table>
 
             <form id="deleteForm" method="POST" action="${deleteUrl}" style="margin-top:16px; text-align:center">

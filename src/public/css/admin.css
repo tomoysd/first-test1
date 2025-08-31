@@ -1,7 +1,8 @@
 .subttl,
 .card,
 .pager,
-.tbl {
+.tbl,
+.filters-row2 {
     width: min(980px, 100%); /* 全体幅を絞る */
     margin-left: auto;
     margin-right: auto;
@@ -15,6 +16,8 @@
     text-align: center;
     margin: 0 0 16px;
     color: #8b7969;
+    align-self: center; /* 親がflexでも中央に来るように保険 */
+    display: block;
 }
 
 .card {
@@ -37,13 +40,13 @@
     cursor: pointer;
     background: #8b7969;
     color: #fff;
-    border-radius: 4px;
+    border-radius: 0;
     text-decoration: none;
 }
 .btn.exp {
     color: #8b7969;
     background: #e1dbd699;
-    width: px;
+    width: 148px;
     margin: 12px 0 8px;
     font-size: 16px;
     display: inline-flex;
@@ -78,22 +81,27 @@
     padding: 8px 10px;
     background: #f4f4f4;
     border: 1px solid #e5e5e5;
-    border-radius: 4px;
+    border-radius: 0;
     box-sizing: border-box;
 }
 .filters input[type="text"]::placeholder {
     color: #887969;
     opacity: 0.9;
 }
-.filters .btn[type="submit"] {
-    color: #fff;
-    background: #5b4b3f;
-    width: 72px;
-} /* 検索 */
+.filters .btn[type="submit"],
 .filters .btn.sub {
-    width: 64px;
-    text-align: center;
-} /* リセット */
+    width: 102px; /* 検索とリセット同幅に */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.filters-row2 {
+    margin-top: 10px;
+    text-align: left; /* 左端に寄せる */
+}
 
 /* ===== テーブル ===== */
 .tbl {
@@ -126,16 +134,11 @@
     padding: 12px;
     border: none;
 }
-.tbl thead tr {
+
+.tbl tr {
     border-bottom: 1px solid #e5e5e5;
 }
-.tbl thead th {
-    border: none;
-} /* ヘッダー個々の枠線はゼロ */
-.tbl tbody tr {
-    border-bottom: 1px solid #e5e5e5;
-}
-.tbl tbody tr:last-child {
+.tbl tr:last-child {
     border-bottom: none;
 }
 .tbl .btn.sub {
